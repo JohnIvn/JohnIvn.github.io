@@ -78,60 +78,190 @@
 
     <main>
       <section class="section bg-secondary">
-        <div class="container">
+        <div class="container-xl">
           <h2 style="text-align: center; margin-bottom: 60px">What I Do.</h2>
-          <div class="grid">
-            <div class="card">
-              <div>
-                <h3 class="card-title">Frontend Development</h3>
-                <p class="card-text">
-                  Building responsive, intuitive interfaces using React,
-                  Angular, and modern web technologies.
-                </p>
+          <div class="row g-4">
+            <!-- Frontend Development -->
+            <div class="col-12 col-md-6">
+              <div class="card h-100 p-0" style="overflow: hidden">
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(0, 113, 227, 0.1),
+                      rgba(0, 113, 227, 0.05)
+                    );
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <i
+                    class="bi bi-window-desktop"
+                    style="font-size: 3rem; color: var(--accent-color)"
+                  ></i>
+                </div>
+                <div
+                  class="card-body"
+                  style="padding: 30px; display: flex; flex-direction: column"
+                >
+                  <h3 class="card-title">Frontend Development</h3>
+                  <p
+                    class="card-text"
+                    style="
+                      color: var(--text-secondary);
+                      margin-bottom: 20px;
+                      flex-grow: 1;
+                    "
+                  >
+                    Building responsive, intuitive interfaces using React,
+                    Angular, and modern web technologies.
+                  </p>
+                  <img
+                    src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB"
+                    alt="React"
+                    style="width: fit-content; max-height: 25px"
+                  />
+                </div>
               </div>
-              <img
-                src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB"
-                alt="React"
-                style="width: 40px; margin-top: 20px"
-              />
             </div>
-            <div class="card">
-              <div>
-                <h3 class="card-title">Backend & Architecture</h3>
-                <p class="card-text">
-                  Designing scalable systems with Node.js, Python, and
-                  enterprise-grade databases.
-                </p>
+
+            <!-- Backend & Architecture -->
+            <div class="col-12 col-md-6">
+              <div class="card h-100 p-0" style="overflow: hidden">
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(155, 81, 224, 0.1),
+                      rgba(0, 113, 227, 0.05)
+                    );
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <i
+                    class="bi bi-hdd-network"
+                    style="font-size: 3rem; color: var(--accent-color)"
+                  ></i>
+                </div>
+                <div
+                  class="card-body"
+                  style="padding: 30px; display: flex; flex-direction: column"
+                >
+                  <h3 class="card-title">Backend & Architecture</h3>
+                  <p
+                    class="card-text"
+                    style="
+                      color: var(--text-secondary);
+                      margin-bottom: 20px;
+                      flex-grow: 1;
+                    "
+                  >
+                    Designing scalable systems with Node.js, Python, and
+                    enterprise-grade databases.
+                  </p>
+                  <img
+                    src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white"
+                    alt="Node"
+                    style="width: fit-content; max-height: 25px"
+                  />
+                </div>
               </div>
-              <img
-                src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white"
-                alt="Node"
-                style="width: 40px; margin-top: 20px"
-              />
             </div>
-            <div class="card">
-              <div>
-                <h3 class="card-title">IoT & Embedded Systems</h3>
-                <p class="card-text">
-                  Experience with Arduino, embedded development, and IoT
-                  platforms.
-                </p>
+
+            <!-- IoT & Embedded Systems -->
+            <div class="col-12 col-md-6">
+              <div class="card h-100 p-0" style="overflow: hidden">
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(39, 174, 96, 0.1),
+                      rgba(0, 113, 227, 0.05)
+                    );
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <i
+                    class="bi bi-cpu"
+                    style="font-size: 3rem; color: var(--accent-color)"
+                  ></i>
+                </div>
+                <div
+                  class="card-body"
+                  style="padding: 30px; display: flex; flex-direction: column"
+                >
+                  <h3 class="card-title">IoT & Embedded Systems</h3>
+                  <p
+                    class="card-text"
+                    style="
+                      color: var(--text-secondary);
+                      margin-bottom: 20px;
+                      flex-grow: 1;
+                    "
+                  >
+                    Experience with Arduino, embedded development, and IoT
+                    platforms.
+                  </p>
+                  <img
+                    src="https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white"
+                    alt="Arduino"
+                    style="width: fit-content; max-height: 25px"
+                  />
+                </div>
               </div>
-              <img
-                src="https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white"
-                alt="Arduino"
-                style="width: 40px; margin-top: 20px"
-              />
             </div>
-            <div class="card">
-              <div>
-                <h3 class="card-title">Full Stack Solutions</h3>
-                <p class="card-text">
-                  End-to-end development from design to deployment. I bring
-                  ideas to life.
-                </p>
+
+            <!-- Full Stack Solutions -->
+            <div class="col-12 col-md-6">
+              <div class="card h-100 p-0" style="overflow: hidden">
+                <div
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(235, 87, 87, 0.1),
+                      rgba(0, 113, 227, 0.05)
+                    );
+                    height: 200px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                >
+                  <i
+                    class="bi bi-rocket-takeoff"
+                    style="font-size: 3rem; color: var(--accent-color)"
+                  ></i>
+                </div>
+                <div
+                  class="card-body"
+                  style="padding: 30px; display: flex; flex-direction: column"
+                >
+                  <h3 class="card-title">Full Stack Solutions</h3>
+                  <p
+                    class="card-text"
+                    style="
+                      color: var(--text-secondary);
+                      margin-bottom: 20px;
+                      flex-grow: 1;
+                    "
+                  >
+                    End-to-end development from design to deployment. I bring
+                    ideas to life.
+                  </p>
+                  <i
+                    class="bi bi-layers-fill"
+                    style="font-size: 1.5rem; color: var(--text-secondary)"
+                  ></i>
+                </div>
               </div>
-              <p style="font-size: 40px; margin-top: 20px">🚀</p>
             </div>
           </div>
         </div>
@@ -183,14 +313,14 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="container">
-        <p style="text-align: center; font-size: 19px; color: var(--text-secondary);">&copy; 2026 Jan Ivan Montenegro. All rights reserved.</p>
-        <div class="social-links" style="display: flex; gap: 30px; justify-content: center; margin-top: 40px;">
-          <a href="https://github.com/johnivn"><i class="bi bi-github" style="font-size: 1.5rem;"></i></a>
-          <a href="mailto:janivantot@gmail.com"><i class="bi bi-envelope-fill" style="font-size: 1.5rem;"></i></a>
-          <a href="https://linkedin.com"><i class="bi bi-linkedin" style="font-size: 1.5rem;"></i></a>
-        </div>
+    <footer style="padding: 24px 0; background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+      <div class="container-xl" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 20px;">
+        <p style="font-size: 12px; font-weight: 400; letter-spacing: -0.01em; color: var(--text-secondary); margin: 0;">&copy; 2026 Jan Ivan Montenegro.</p>
+        <ul class="nav-links" style="margin: 0; padding: 0; align-items: center;">
+          <li><a href="https://github.com/johnivn" style="display: flex; align-items: center; gap: 6px;"><i class="bi bi-github" style="font-size: 14px;"></i> GitHub</a></li>
+          <li><a href="mailto:janivantot@gmail.com" style="display: flex; align-items: center; gap: 6px;"><i class="bi bi-envelope-fill" style="font-size: 14px;"></i> Email</a></li>
+          <li><a href="https://www.linkedin.com/in/jan-ivan-montenegro-b499b139a" style="display: flex; align-items: center; gap: 6px;"><i class="bi bi-linkedin" style="font-size: 14px;"></i> LinkedIn</a></li>
+        </ul>
       </div>
     </footer>
   </body>
