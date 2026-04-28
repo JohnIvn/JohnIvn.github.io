@@ -77,8 +77,8 @@
         <div class="container-xl">
           <div class="row g-4">
             <!-- Nutribin Ecosystem -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 p-0" style="overflow: hidden">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#nutribinModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div
                   style="
                     background: linear-gradient(
@@ -144,8 +144,8 @@
             </div>
 
             <!-- GoFare Ecosystem -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 p-0" style="overflow: hidden">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#gofareModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div
                   style="
                     background: linear-gradient(
@@ -210,8 +210,8 @@
             </div>
 
             <!-- RollCall SAS -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 p-0" style="overflow: hidden">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#rollcallModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div
                   style="
                     background: linear-gradient(
@@ -265,8 +265,8 @@
             </div>
 
             <!-- ISP Management -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 p-0" style="overflow: hidden">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#ispModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div
                   style="
                     background: linear-gradient(
@@ -321,8 +321,8 @@
             </div>
 
             <!-- Nihon Gaku -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 p-0" style="overflow: hidden">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#nihonModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                 <div
                   style="
                     background: linear-gradient(
@@ -379,6 +379,200 @@
         </div>
       </section>
     </main>
+
+    <!-- Modals -->
+    <div class="modal fade" id="nutribinModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+            <h5 class="modal-title" style="font-weight: 600;">Nutribin Ecosystem</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div id="nutribinCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/nutri1.png" class="d-block w-100" alt="Nutribin Preview 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nutri2.png" class="d-block w-100" alt="Nutribin Preview 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nutri3.png" class="d-block w-100" alt="Nutribin Preview 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nutri4.png" class="d-block w-100" alt="Nutribin Preview 4">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nutri5.png" class="d-block w-100" alt="Nutribin Preview 5">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nutri6.png" class="d-block w-100" alt="Nutribin Preview 6">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div style="padding: 24px;">
+              <p style="color: var(--text-secondary);">A smart compost system that uses Arduino and ESP32 to monitor NPK, pH, and environmental factors. Includes a real-time web and mobile dashboard.</p>
+              <a href="https://github.com/JohnIvn/NutriBin-Server" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="gofareModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+            <h5 class="modal-title" style="font-weight: 600;">GoFare Ecosystem</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div id="gofareCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/gofare1.png" class="d-block w-100" alt="GoFare Preview 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/gofare2.png" class="d-block w-100" alt="GoFare Preview 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/gofare3.png" class="d-block w-100" alt="GoFare Preview 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/gofare4.png" class="d-block w-100" alt="GoFare Preview 4">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#gofareCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#gofareCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div style="padding: 24px;">
+              <p style="color: var(--text-secondary);">Modern fare management system with NFC/RFID authentication and Stripe integration.</p>
+              <a href="https://github.com/UnexpectedFeatures/GoFare-Server" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="rollcallModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+            <h5 class="modal-title" style="font-weight: 600;">RollCall SAS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div id="rollcallCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/rollcall1.png" class="d-block w-100" alt="RollCall Preview 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/rollcall2.png" class="d-block w-100" alt="RollCall Preview 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/rollcall3.png" class="d-block w-100" alt="RollCall Preview 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div style="padding: 24px;">
+              <p style="color: var(--text-secondary);">RFID-powered attendance system for educational institutions.</p>
+              <a href="https://github.com/JohnIvn/RollCall-SAS" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ispModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+            <h5 class="modal-title" style="font-weight: 600;">DuhOne Solutions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div id="ispCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/duhone1.png" class="d-block w-100" alt="ISP Management Preview 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/duhone2.png" class="d-block w-100" alt="ISP Management Preview 2">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#ispCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#ispCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div style="padding: 24px;">
+              <p style="color: var(--text-secondary);">Complete ISP Management System featuring customer billing and network status monitoring.</p>
+              <a href="https://github.com/JohnIvn/DuhOne-Solutions" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="nihonModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+            <h5 class="modal-title" style="font-weight: 600;">Nihon Gaku</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
+          </div>
+          <div class="modal-body p-0">
+            <div id="nihonCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/nihon1.png" class="d-block w-100" alt="Nihon Gaku Preview 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nihon2.png" class="d-block w-100" alt="Nihon Gaku Preview 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nihon3.png" class="d-block w-100" alt="Nihon Gaku Preview 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/nihon4.png" class="d-block w-100" alt="Nihon Gaku Preview 4">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#nihonCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#nihonCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div style="padding: 24px;">
+              <p style="color: var(--text-secondary);">Interactive Japanese language learning platform built with educational UX in mind.</p>
+              <a href="https://github.com/JohnIvn/Nihon-Gaku" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer style="padding: 24px 0; background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
       <div class="container-xl" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 20px;">
         <p style="font-size: 12px; font-weight: 400; letter-spacing: -0.01em; color: var(--text-secondary); margin: 0;">&copy; 2026 Jan Ivan Montenegro.</p>
@@ -389,5 +583,9 @@
         </ul>
       </div>
     </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+
+

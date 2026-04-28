@@ -586,3 +586,17 @@ footer p {
     max-width: 100%;
   }
 }
+
+/* Modal Carousel Styles */
+.modal .carousel-item img {
+  height: 450px;
+  object-fit: contain;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+@media (max-width: 768px) {
+  .modal .carousel-item img {
+    height: 250px;
+  }
+}
+
