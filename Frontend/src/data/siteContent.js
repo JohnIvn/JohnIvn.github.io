@@ -33,6 +33,16 @@ export const projects = [
     tags: ["NestJS", "React", "IoT"],
     image: "/images/nutri1.png",
     url: "https://github.com/JohnIvn/NutriBin-Server",
+    liveUrl: "https://nutribin.up.railway.app/",
+  },
+  {
+    title: "Ely and Yolly Jewelry",
+    description:
+      "E-commerce platform for jewelry with integrated production support tooling and secure payment processing.",
+    tags: ["NestJS", "React", "Stripe"],
+    image: "/images/ely-yolly1.png",
+    url: "https://ely-and-yolly.up.railway.app/",
+    liveUrl: "https://ely-and-yolly.up.railway.app/",
   },
   {
     title: "GoFare Ecosystem",

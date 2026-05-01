@@ -1,177 +1,229 @@
+import { useState } from "react";
+import { projects } from "../data/siteContent";
+
 function ProjectsPage() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Identify featured projects
+  const featuredProjects = projects.filter(
+    (p) =>
+      p.title === "Nutribin Ecosystem" || p.title === "Ely and Yolly Jewelry",
+  );
+  const regularProjects = projects.filter(
+    (p) =>
+      p.title !== "Nutribin Ecosystem" && p.title !== "Ely and Yolly Jewelry",
+  );
+
+  const closeModal = () => setSelectedProject(null);
+
+  const handleEscKey = (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  };
+
   return (
     <>
       <section className="section">
         <div className="container-xl">
-          <div className="ga-hero reveal">
-            <div className="ga-hero-panel">
+          {/* Hero Section */}
+          <div className="projects-hero reveal">
+            <div className="projects-hero-content">
               <span className="eyebrow mb-3">
-                <i className="bi bi-brush-fill"></i> Graphic artist portfolio
+                <i className="bi bi-code-square"></i> Portfolio Projects
               </span>
-              <h1 className="ga-title">Design systems with poster energy.</h1>
+              <h1 className="ga-title">Full-stack solutions</h1>
+              <h1 className="ga-title">from concept to production.</h1>
               <p className="ga-copy mb-0">
-                A curated wall of interface projects composed like print spreads:
-                expressive color, strong hierarchy, and interaction-led storytelling.
+                A collection of complete projects spanning IoT ecosystems,
+                e-commerce platforms, transit systems, and educational tools.
+                Each represents end-to-end development with focus on user
+                experience, scalability, and technical excellence.
               </p>
             </div>
-            <div className="ga-stamp">
-              <span>Issue 2026</span>
-              <strong>06</strong>
-              <span>Interactive works</span>
+            <div className="projects-stats">
+              <div className="stat-item">
+                <span className="stat-label">Projects</span>
+                <strong className="stat-value">{projects.length}</strong>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Technologies</span>
+                <strong className="stat-value">15+</strong>
+              </div>
             </div>
           </div>
 
-          <div className="ga-collage">
-            <article className="card project-card ga-tile ga-feature-1 reveal delay-1">
-              <div className="card-media tone-1 ga-media">
-                <div>
-                  <span className="kicker mb-3">
-                    <i className="bi bi-broadcast-pin"></i> Live canvas
+          {/* Featured Projects */}
+          <div className="featured-projects reveal">
+            {featuredProjects.map((project, index) => (
+              <article
+                key={index}
+                className={`project-card-featured delay-${index + 1} clickable`}
+                onClick={() => setSelectedProject(project)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setSelectedProject(project);
+                  }
+                }}
+              >
+                {/* Image Container */}
+                <div className="project-featured-image">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                  <div className="project-image-overlay"></div>
+                  <div className="project-click-hint">
+                    <i className="bi bi-play-circle-fill"></i>
+                    <span>Click to view live</span>
+                  </div>
+                </div>
+
+                {/* Content Container */}
+                <div className="project-featured-content">
+                  <span className="featured-badge">
+                    <i className="bi bi-star-fill"></i> Featured
                   </span>
-                  <h2 className="magazine-title mb-2">Nutribin Ecosystem</h2>
-                  <p className="magazine-dek mb-0">
-                    Smart compost visuals and operations dashboard in one narrative flow.
+                  <h2 className="project-featured-title">{project.title}</h2>
+                  <p className="project-featured-description">
+                    {project.description}
                   </p>
-                </div>
-              </div>
-              <div className="card-body">
-                <div className="ga-meta mb-3">Series 01 / Eco systems</div>
-                <div className="project-tags mb-3">
-                  <span className="project-tag">NestJS</span>
-                  <span className="project-tag">React</span>
-                  <span className="project-tag">IoT</span>
-                </div>
-                <a
-                  href="https://nutribin.up.railway.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary w-100"
-                >
-                  Open live site
-                </a>
-              </div>
-            </article>
 
-            <article className="card project-card ga-tile ga-feature-2 reveal delay-2">
-              <div className="card-media tone-6 ga-media">
-                <div>
-                  <span className="kicker mb-3">
-                    <i className="bi bi-broadcast-pin"></i> Live canvas
-                  </span>
-                  <h2 className="magazine-title mb-2">Ely and Yolly Jewelry</h2>
-                  <p className="magazine-dek mb-0">
-                    Commerce composition with production support tooling behind the scenes.
-                  </p>
-                </div>
-              </div>
-              <div className="card-body">
-                <div className="ga-meta mb-3">Series 06 / Commerce stack</div>
-                <div className="project-tags mb-3">
-                  <span className="project-tag">NestJS</span>
-                  <span className="project-tag">React</span>
-                  <span className="project-tag">DevOps</span>
-                </div>
-                <a
-                  href="https://ely-and-yolly.up.railway.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary w-100"
-                >
-                  Open live site
-                </a>
-              </div>
-            </article>
+                  {/* Tags */}
+                  <div className="project-tags">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="project-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-            <article className="card project-card ga-tile ga-small reveal delay-3">
-              <div className="card-media tone-2 ga-media">
-                <div>
-                  <h3 className="mb-1">GoFare Ecosystem</h3>
-                  <p className="mb-0 muted">Transit operations / Series 02</p>
+                  {/* Link Button */}
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <i className="bi bi-github"></i> View Project
+                  </a>
                 </div>
-              </div>
-              <div className="card-body">
-                <p className="project-description">
-                  Fare management design with secure flows and structured operation rhythm.
-                </p>
-                <a
-                  href="https://github.com/UnexpectedFeatures/GoFare-Server"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary w-100"
-                >
-                  Open details
-                </a>
-              </div>
-            </article>
+              </article>
+            ))}
+          </div>
 
-            <article className="card project-card ga-tile ga-small reveal delay-1">
-              <div className="card-media tone-3 ga-media">
-                <div>
-                  <h3 className="mb-1">RollCall SAS</h3>
-                  <p className="mb-0 muted">RFID attendance / Series 03</p>
-                </div>
-              </div>
-              <div className="card-body">
-                <p className="project-description">
-                  RFID attendance flow designed for speed, clarity, and admin usability.
-                </p>
-                <a
-                  href="https://github.com/JohnIvn/RollCall-SAS"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary w-100"
+          {/* Regular Projects Grid */}
+          <div className="projects-section">
+            <h3 className="section-subtitle">Other Projects</h3>
+            <div className="projects-grid">
+              {regularProjects.map((project, index) => (
+                <article
+                  key={index}
+                  className={`project-card-v2 reveal delay-${(index % 3) + 1}`}
                 >
-                  Open details
-                </a>
-              </div>
-            </article>
+                  {/* Image Container */}
+                  <div className="project-image-container">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
+                    <div className="project-image-overlay"></div>
+                  </div>
 
-            <article className="card project-card ga-tile ga-small reveal delay-2">
-              <div className="card-media tone-4 ga-media">
-                <div>
-                  <h3 className="mb-1">DuhOne Solutions</h3>
-                  <p className="mb-0 muted">ISP systems / Series 04</p>
-                </div>
-              </div>
-              <div className="card-body">
-                <p className="project-description">
-                  ISP-facing system architecture for service and operations reliability.
-                </p>
-                <a
-                  href="https://github.com/JohnIvn"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary w-100"
-                >
-                  Open details
-                </a>
-              </div>
-            </article>
+                  {/* Content Container */}
+                  <div className="project-content">
+                    <div className="project-header">
+                      <h2 className="project-title">{project.title}</h2>
+                    </div>
 
-            <article className="card project-card ga-tile ga-small reveal delay-3">
-              <div className="card-media tone-5 ga-media">
-                <div>
-                  <h3 className="mb-1">Nihon Gaku</h3>
-                  <p className="mb-0 muted">Learning product / Series 05</p>
-                </div>
-              </div>
-              <div className="card-body">
-                <p className="project-description">
-                  Learning interface focused on warmth, readability, and playful pacing.
-                </p>
-                <a
-                  href="https://github.com/JohnIvn"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary w-100"
-                >
-                  Open details
-                </a>
-              </div>
-            </article>
+                    <p className="project-description">{project.description}</p>
+
+                    {/* Tags */}
+                    <div className="project-tags">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="project-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Link Button */}
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary w-100"
+                    >
+                      <i className="bi bi-github"></i> View Repository
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Live View Modal */}
+      {selectedProject && (
+        <div
+          className="modal-overlay"
+          onClick={closeModal}
+          onKeyDown={handleEscKey}
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+        >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header */}
+            <div className="modal-header">
+              <h2 className="modal-title">{selectedProject.title}</h2>
+              <button
+                className="modal-close"
+                onClick={closeModal}
+                aria-label="Close"
+              >
+                <i className="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            {/* Live View Iframe */}
+            <div className="modal-body">
+              <iframe
+                src={selectedProject.liveUrl}
+                title={selectedProject.title}
+                className="live-iframe"
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="modal-footer">
+              <a
+                href={selectedProject.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+              >
+                <i className="bi bi-box-arrow-up-right"></i> Open in New Tab
+              </a>
+              <button className="btn btn-secondary" onClick={closeModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
