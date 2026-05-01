@@ -50,556 +50,429 @@
           <h2 style="font-size: 56px; margin-bottom: 20px; text-align: center">
             Projects.
           </h2>
-          <p
-            class="subtitle"
-            style="
-              color: var(--text-secondary);
-              max-width: 800px;
-              margin: 0 auto 60px;
-              text-align: center;
-            "
-          >
-            A collection of work spanning full-stack development, IoT, and
-            system architecture.
-          </p>
-
-          <!-- <div class="media-large">
-            <img
-              src="https://github.com/user-attachments/assets/900f8582-1458-4ae0-b3cd-98328b33b90c"
-              alt="Projects Header"
-              style="width: 100%; height: auto; display: block"
-            />
-          </div> -->
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container-xl">
-          <div class="row g-4">
-            <!-- Nutribin Ecosystem -->
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#nutribinModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      rgba(0, 113, 227, 0.1),
-                      rgba(0, 113, 227, 0.05)
-                    );
-                    height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="bi bi-trash3-fill"
-                    style="font-size: 3rem; color: var(--accent-color)"
-                  ></i>
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Projects | Jan Ivan Graphic Art Portfolio</title>
+              <link
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                rel="stylesheet"
+              />
+              <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+              />
+              <link rel="preconnect" href="https://fonts.googleapis.com" />
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+              <link
+                href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+                rel="stylesheet"
+              />
+              <link rel="stylesheet" href="styles.css" />
+              <link rel="icon" href="images/223152.png" type="image/png" />
+            </head>
+            <body>
+              <nav>
+                <div class="container-xl d-flex align-items-center justify-content-between gap-3 py-2">
+                  <a href="index.html" class="logo">
+                    <i class="bi bi-palette2"></i>
+                    Jan Ivan
+                  </a>
+                  <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="about.html">About</a></li>
+                  </ul>
                 </div>
-                <div class="card-body" style="padding: 30px">
-                  <h3 class="card-title">Nutribin Ecosystem</h3>
-                  <p style="color: var(--text-secondary); margin-bottom: 20px">Creating a smart compost system that accepts only soft or small biodegradable waste, automatically mixing and drying it to accelerate safe decomposition.</p>
-                  <div
-                    class="project-tags"
-                    style="display: flex; gap: 10px; flex-wrap: wrap"
-                  >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >NestJS</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >React</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >IoT</span
-                    >
+              </nav>
+
+              <main class="page-shell">
+                <section class="section">
+                  <div class="container-xl">
+                    <div class="section-heading text-center mx-auto reveal">
+                      <span class="eyebrow mb-3"><i class="bi bi-easel"></i> Selected works</span>
+                      <h1 class="mx-auto" style="max-width: 12ch;">Projects as visual systems.</h1>
+                      <p class="section-copy mx-auto">
+                        A curated set of product studies, IoT systems, and learning platforms presented like an exhibition wall.
+                      </p>
+                    </div>
+
+                    <div class="project-grid">
+                      <article class="card project-card reveal delay-1" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#nutribinModal">
+                        <div class="card-media tone-1">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-trash3-fill"></i></div>
+                            <h3 class="mb-0">Nutribin Ecosystem</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">A compost system that blends automation, monitoring, and data visualization into a single intelligent experience.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">NestJS</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">IoT</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+
+                      <article class="card project-card reveal delay-2" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#gofareModal">
+                        <div class="card-media tone-2">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-credit-card-fill"></i></div>
+                            <h3 class="mb-0">GoFare Ecosystem</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">Fare management design with secure flows, fast interactions, and a clean operational dashboard rhythm.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">Express</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Stripe</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+
+                      <article class="card project-card reveal delay-3" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#rollcallModal">
+                        <div class="card-media tone-3">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-person-check-fill"></i></div>
+                            <h3 class="mb-0">RollCall SAS</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">An RFID attendance system that turns admin tasks into a structured, touch-ready workflow.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">ESP32</span>
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">RFID</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+
+                      <article class="card project-card reveal delay-1" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#ispModal">
+                        <div class="card-media tone-4">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-router-fill"></i></div>
+                            <h3 class="mb-0">DuhOne Solutions</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">ISP management architecture focused on reliability, routing clarity, and operator-friendly dashboards.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Node</span>
+                            <span class="project-tag">Operations</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+
+                      <article class="card project-card reveal delay-2" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#nihonModal">
+                        <div class="card-media tone-5">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-translate"></i></div>
+                            <h3 class="mb-0">Nihon Gaku</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">A Japanese learning website designed to feel playful, warm, and easy to navigate for focused practice.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">UX/UI</span>
+                            <span class="project-tag">Education</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+
+                      <article class="card project-card reveal delay-3" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#eyjModal">
+                        <div class="card-media tone-6">
+                          <div>
+                            <div class="project-mark mb-3"><i class="bi bi-gem"></i></div>
+                            <h3 class="mb-0">Ely & Yolly Jewelry</h3>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <p class="project-description">A production support system for a jewelry business, balancing backend reliability with polished visuals.</p>
+                          <div class="project-tags mb-4">
+                            <span class="project-tag">NestJS</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">DevOps</span>
+                          </div>
+                          <div class="btn btn-secondary w-100">Open details</div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </section>
+              </main>
+
+              <footer class="footer">
+                <div class="container-xl d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                  <p class="mb-0 text-secondary">&copy; 2026 Jan Ivan Montenegro.</p>
+                  <ul class="footer-links">
+                    <li><a href="https://github.com/johnivn"><i class="bi bi-github me-1"></i> GitHub</a></li>
+                    <li><a href="mailto:janivantot@gmail.com"><i class="bi bi-envelope me-1"></i> Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/jan-ivan-montenegro-b499b139a"><i class="bi bi-linkedin me-1"></i> LinkedIn</a></li>
+                  </ul>
+                </div>
+              </footer>
+
+              <div class="modal fade" id="nutribinModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 01</span>
+                        <h5 class="modal-title mb-0">Nutribin Ecosystem</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="nutribinCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/nutri1.png" class="d-block w-100" alt="Nutribin preview 1" /></div>
+                              <div class="carousel-item"><img src="images/nutri2.png" class="d-block w-100" alt="Nutribin preview 2" /></div>
+                              <div class="carousel-item"><img src="images/nutri3.png" class="d-block w-100" alt="Nutribin preview 3" /></div>
+                              <div class="carousel-item"><img src="images/nutri4.png" class="d-block w-100" alt="Nutribin preview 4" /></div>
+                              <div class="carousel-item"><img src="images/nutri5.png" class="d-block w-100" alt="Nutribin preview 5" /></div>
+                              <div class="carousel-item"><img src="images/nutri6.png" class="d-block w-100" alt="Nutribin preview 6" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> Dec 2025 - Apr 2026</p>
+                          <p class="muted">Smart compost system that accepts only soft or small biodegradable waste, then mixes and dries it to accelerate safe decomposition.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">NestJS</span>
+                            <span class="tag">React.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">ESP32</span>
+                          </div>
+                          <a href="https://github.com/JohnIvn/NutriBin-Server" target="_blank" class="btn btn-primary w-100">View on GitHub <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- GoFare Ecosystem -->
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#gofareModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      rgba(235, 87, 87, 0.1),
-                      rgba(0, 113, 227, 0.05)
-                    );
-                    height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="bi bi-credit-card-fill"
-                    style="font-size: 3rem; color: var(--accent-color)"
-                  ></i>
-                </div>
-                <div class="card-body" style="padding: 30px">
-                  <h3 class="card-title">GoFare Ecosystem</h3>
-                  <p style="color: var(--text-secondary); margin-bottom: 20px">Modern fare management system built to serve transportation networks with speed, reliability, and security.</p>
-                  <div
-                    class="project-tags"
-                    style="display: flex; gap: 10px; flex-wrap: wrap"
-                  >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >Express</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >MySQL</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >Stripe</span
-                    >
+              <div class="modal fade" id="gofareModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 02</span>
+                        <h5 class="modal-title mb-0">GoFare Ecosystem</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="gofareCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/gofare1.png" class="d-block w-100" alt="GoFare preview 1" /></div>
+                              <div class="carousel-item"><img src="images/gofare2.png" class="d-block w-100" alt="GoFare preview 2" /></div>
+                              <div class="carousel-item"><img src="images/gofare3.png" class="d-block w-100" alt="GoFare preview 3" /></div>
+                              <div class="carousel-item"><img src="images/gofare4.png" class="d-block w-100" alt="GoFare preview 4" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#gofareCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#gofareCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> Mar 2025 - Apr 2025</p>
+                          <p class="muted">Fare management system built for speed, reliability, and security, with smooth integration for mobile and kiosk workflows.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">React.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">RFID</span>
+                            <span class="tag">Stripe</span>
+                          </div>
+                          <a href="https://github.com/UnexpectedFeatures/GoFare-Server" target="_blank" class="btn btn-primary w-100">View on GitHub <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- RollCall SAS -->
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#rollcallModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      rgba(39, 174, 96, 0.1),
-                      rgba(0, 113, 227, 0.05)
-                    );
-                    height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="bi bi-person-check-fill"
-                    style="font-size: 3rem; color: var(--accent-color)"
-                  ></i>
-                </div>
-                <div class="card-body" style="padding: 30px">
-                  <h3 class="card-title">RollCall SAS</h3>
-                  <p style="color: var(--text-secondary); margin-bottom: 20px">RFID Powered Attendance System</p>
-                  <div
-                    class="project-tags"
-                    style="display: flex; gap: 10px; flex-wrap: wrap"
-                  >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >ESP32</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >React.js</span
-                    >
+              <div class="modal fade" id="rollcallModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 03</span>
+                        <h5 class="modal-title mb-0">RollCall SAS</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="rollcallCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/rollcall1.png" class="d-block w-100" alt="RollCall preview 1" /></div>
+                              <div class="carousel-item"><img src="images/rollcall2.png" class="d-block w-100" alt="RollCall preview 2" /></div>
+                              <div class="carousel-item"><img src="images/rollcall3.png" class="d-block w-100" alt="RollCall preview 3" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> Jan 2025 - Mar 2025</p>
+                          <p class="muted">RFID-powered attendance system designed to automate check-in and provide instant attendance logs for administrators.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">ESP32</span>
+                            <span class="tag">React.js</span>
+                            <span class="tag">RFID</span>
+                          </div>
+                          <a href="https://github.com/JohnIvn/RollCall-SAS" target="_blank" class="btn btn-primary w-100">View on GitHub <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- ISP Management -->
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#ispModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      rgba(242, 201, 76, 0.1),
-                      rgba(0, 113, 227, 0.05)
-                    );
-                    height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="bi bi-router-fill"
-                    style="font-size: 3rem; color: var(--accent-color)"
-                  ></i>
-                </div>
-                <div class="card-body" style="padding: 30px">
-                  <h3 class="card-title">DuhOne Solutions</h3>
-                  <p style="color: var(--text-secondary); margin-bottom: 20px">ISP Management System</p>
-                  <div
-                    class="project-tags"
-                    style="display: flex; gap: 10px; flex-wrap: wrap"
-                  >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >PostgreSQL</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >Node</span
-                    >
+              <div class="modal fade" id="ispModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 04</span>
+                        <h5 class="modal-title mb-0">DuhOne Solutions</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="ispCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/duhone1.png" class="d-block w-100" alt="DuhOne preview 1" /></div>
+                              <div class="carousel-item"><img src="images/duhone2.png" class="d-block w-100" alt="DuhOne preview 2" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#ispCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#ispCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> ISP management system</p>
+                          <p class="muted">Infrastructure-facing dashboard and data model designed to support service operations, records, and network tracking.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Node</span>
+                            <span class="tag">Dashboard</span>
+                          </div>
+                          <a href="https://github.com/JohnIvn" target="_blank" class="btn btn-primary w-100">View related work <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Nihon Gaku -->
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 p-0" style="overflow: hidden; cursor: pointer; transition: transform 0.2s;" data-bs-toggle="modal" data-bs-target="#nihonModal" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                <div
-                  style="
-                    background: linear-gradient(
-                      135deg,
-                      rgba(155, 81, 224, 0.1),
-                      rgba(0, 113, 227, 0.05)
-                    );
-                    height: 200px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="bi bi-translate"
-                    style="font-size: 3rem; color: var(--accent-color)"
-                  ></i>
-                </div>
-                <div class="card-body" style="padding: 30px">
-                  <h3 class="card-title">Nihon Gaku</h3>
-                  <p style="color: var(--text-secondary); margin-bottom: 20px">Japanese Language Learning Website</p>
-                  <div
-                    class="project-tags"
-                    style="display: flex; gap: 10px; flex-wrap: wrap"
-                  >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >React</span
-                    >
-                    <span
-                      style="
-                        background: var(--bg-color);
-                        border: 1px solid var(--border-color);
-                        padding: 5px 12px;
-                        border-radius: 20px;
-                        font-size: 13px;
-                      "
-                      >UX/UI</span
-                    >
+              <div class="modal fade" id="nihonModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 05</span>
+                        <h5 class="modal-title mb-0">Nihon Gaku</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="nihonCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/nihon1.png" class="d-block w-100" alt="Nihon preview 1" /></div>
+                              <div class="carousel-item"><img src="images/nihon2.png" class="d-block w-100" alt="Nihon preview 2" /></div>
+                              <div class="carousel-item"><img src="images/nihon3.png" class="d-block w-100" alt="Nihon preview 3" /></div>
+                              <div class="carousel-item"><img src="images/nihon4.png" class="d-block w-100" alt="Nihon preview 4" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#nihonCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#nihonCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> Japanese learning website</p>
+                          <p class="muted">Educational experience centered on visual clarity, learning flow, and a more playful interface rhythm.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">React</span>
+                            <span class="tag">UX/UI</span>
+                            <span class="tag">Learning</span>
+                          </div>
+                          <a href="https://github.com/JohnIvn" target="_blank" class="btn btn-primary w-100">View related work <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
 
-    <!-- Modals -->
-</body>
-</html>
-
-
-
-
-    <!-- Modals -->
-    <!-- Nutribin Modal -->
-    <div class="modal fade" id="nutribinModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
-          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
-            <h5 class="modal-title" style="font-weight: 600;">Nutribin Ecosystem</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="row g-0">
-              <!-- Left side: Images -->
-              <div class="col-12 col-lg-7">
-                <div id="nutribinCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-color);">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="images/nutri1.png" class="d-block w-100" alt="Preview 1"></div>
-                    <div class="carousel-item"><img src="images/nutri2.png" class="d-block w-100" alt="Preview 2"></div>
-                    <div class="carousel-item"><img src="images/nutri3.png" class="d-block w-100" alt="Preview 3"></div>
-                    <div class="carousel-item"><img src="images/nutri4.png" class="d-block w-100" alt="Preview 4"></div>
-                    <div class="carousel-item"><img src="images/nutri5.png" class="d-block w-100" alt="Preview 5"></div>
-                    <div class="carousel-item"><img src="images/nutri6.png" class="d-block w-100" alt="Preview 6"></div>
+              <div class="modal fade" id="eyjModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    <div class="modal-header px-4 py-3">
+                      <div>
+                        <span class="eyebrow mb-2"><i class="bi bi-collection"></i> Series 06</span>
+                        <h5 class="modal-title mb-0">Ely & Yolly Jewelry</h5>
+                      </div>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="row g-0">
+                        <div class="col-12 col-lg-7">
+                          <div id="eyjCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active"><img src="images/eyj1.png" class="d-block w-100" alt="Ely & Yolly preview 1" /></div>
+                              <div class="carousel-item"><img src="images/eyj2.png" class="d-block w-100" alt="Ely & Yolly preview 2" /></div>
+                              <div class="carousel-item"><img src="images/eyj3.png" class="d-block w-100" alt="Ely & Yolly preview 3" /></div>
+                              <div class="carousel-item"><img src="images/eyj4.png" class="d-block w-100" alt="Ely & Yolly preview 4" /></div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#eyjCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#eyjCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-lg-5 modal-copy">
+                          <p class="muted mb-3"><i class="bi bi-calendar-event me-1"></i> Production support system</p>
+                          <p class="muted">Backend reliability and deployment support for a jewelry business, paired with clean presentation and operational stability.</p>
+                          <div class="tag-row my-4">
+                            <span class="tag">NestJS</span>
+                            <span class="tag">React</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">APIs</span>
+                          </div>
+                          <a href="mailto:janivantot@gmail.com" class="btn btn-primary w-100">Request details <i class="bi bi-envelope"></i></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#nutribinCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
                 </div>
               </div>
-              <!-- Right side: Details -->
-              <div class="col-12 col-lg-5" style="border-left: 1px solid var(--border-color); padding: 32px; display: flex; flex-direction: column;">
-                <div style="margin-bottom: 24px; font-size: 14px; color: var(--text-secondary);">
-                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <i class="bi bi-calendar-event"></i> Dec 2025 - Apr 2026
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="bi bi-building"></i> Associated with University of Caloocan City
-                  </div>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Creating a smart compost system that accepts only soft or small biodegradable waste, automatically mixing and drying it to accelerate safe decomposition. It continuously monitors fertilizer quality by tracking NPK, pH, temperature, moisture, and key gases. The system controls environmental conditions and logs nutrient and safety metrics to ensure the final fertilizer is safe for plants. The system includes a web and mobile application for real-time monitoring, data visualization, and control, integrated with a hardware setup using Arduino Uno Q and ESP32 for sensor data acquisition, automation, and system management.</p>
-                <div style="margin-top: 16px;">
-                  <h6 style="font-weight: 600; margin-bottom: 12px; font-size: 14px;"><i class="bi bi-tools"></i> Skills Used</h6>
-                  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">NestJS</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">React.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">PostgreSQL</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Machine Learning</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">AI</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Python</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Arduino</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Flutter</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">ESP32</span>
-                  </div>
-                </div>
-                <div class="mt-auto pt-4">
-                  <a href="https://github.com/JohnIvn/NutriBin-Server" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- GoFare Modal -->
-    <div class="modal fade" id="gofareModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
-          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
-            <h5 class="modal-title" style="font-weight: 600;">GoFare Ecosystem</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="row g-0">
-              <!-- Left side: Images -->
-              <div class="col-12 col-lg-7">
-                <div id="gofareCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-color);">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="images/gofare1.png" class="d-block w-100" alt="Preview 1"></div>
-                    <div class="carousel-item"><img src="images/gofare2.png" class="d-block w-100" alt="Preview 2"></div>
-                    <div class="carousel-item"><img src="images/gofare3.png" class="d-block w-100" alt="Preview 3"></div>
-                    <div class="carousel-item"><img src="images/gofare4.png" class="d-block w-100" alt="Preview 4"></div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#gofareCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#gofareCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </div>
-              <!-- Right side: Details -->
-              <div class="col-12 col-lg-5" style="border-left: 1px solid var(--border-color); padding: 32px; display: flex; flex-direction: column;">
-                <div style="margin-bottom: 24px; font-size: 14px; color: var(--text-secondary);">
-                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <i class="bi bi-calendar-event"></i> Mar 2025 - Apr 2025
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="bi bi-building"></i> Associated with University of Caloocan City
-                  </div>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">Modern fare management system built to serve transportation networks with speed, reliability, and security. It provides APIs for fare reloading, real-time balance updates, NFC/RFID card authentication, and receipt generation, all while ensuring smooth integration with client-side mobile and kiosk applications.</p>
-                <div style="margin-top: 16px;">
-                  <h6 style="font-weight: 600; margin-bottom: 12px; font-size: 14px;"><i class="bi bi-tools"></i> Skills Used</h6>
-                  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">React.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Express.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">MySQL</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">ESP32</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">RFID</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Android</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">WinForms</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Stripe</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Paypal</span>
-                  </div>
-                </div>
-                <div class="mt-auto pt-4">
-                  <a href="https://github.com/UnexpectedFeatures/GoFare-Server" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RollCall Modal -->
-    <div class="modal fade" id="rollcallModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
-          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
-            <h5 class="modal-title" style="font-weight: 600;">RollCall SAS</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="row g-0">
-              <!-- Left side: Images -->
-              <div class="col-12 col-lg-7">
-                <div id="rollcallCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-color);">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="images/rollcall1.png" class="d-block w-100" alt="Preview 1"></div>
-                    <div class="carousel-item"><img src="images/rollcall2.png" class="d-block w-100" alt="Preview 2"></div>
-                    <div class="carousel-item"><img src="images/rollcall3.png" class="d-block w-100" alt="Preview 3"></div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#rollcallCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </div>
-              <!-- Right side: Details -->
-              <div class="col-12 col-lg-5" style="border-left: 1px solid var(--border-color); padding: 32px; display: flex; flex-direction: column;">
-                <div style="margin-bottom: 24px; font-size: 14px; color: var(--text-secondary);">
-                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <i class="bi bi-calendar-event"></i> Mar 2025 - Apr 2025
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="bi bi-building"></i> Associated with University of Caloocan City
-                  </div>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">RFID Powered Attendance System</p>
-                <div style="margin-top: 16px;">
-                  <h6 style="font-weight: 600; margin-bottom: 12px; font-size: 14px;"><i class="bi bi-tools"></i> Skills Used</h6>
-                  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">MySQL</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Express.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">ESP32</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">RFID</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">React.js</span>
-                  </div>
-                </div>
-                <div class="mt-auto pt-4">
-                  <a href="https://github.com/JohnIvn/RollCall-SAS" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DuhOne Modal -->
-    <div class="modal fade" id="ispModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
-          <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
-            <h5 class="modal-title" style="font-weight: 600;">DuhOne Solutions System</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%);"></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="row g-0">
-              <!-- Left side: Images -->
-              <div class="col-12 col-lg-7">
-                <div id="ispCarousel" class="carousel slide" data-bs-ride="carousel" style="height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-color);">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active"><img src="images/duhone1.png" class="d-block w-100" alt="Preview 1"></div>
-                    <div class="carousel-item"><img src="images/duhone2.png" class="d-block w-100" alt="Preview 2"></div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#ispCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#ispCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </div>
-              <!-- Right side: Details -->
-              <div class="col-12 col-lg-5" style="border-left: 1px solid var(--border-color); padding: 32px; display: flex; flex-direction: column;">
-                <div style="margin-bottom: 24px; font-size: 14px; color: var(--text-secondary);">
-                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                    <i class="bi bi-calendar-event"></i> Nov 2024 - Dec 2024
-                  </div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="bi bi-building"></i> Associated with University of Caloocan City
-                  </div>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">ISP Management System</p>
-                <div style="margin-top: 16px;">
-                  <h6 style="font-weight: 600; margin-bottom: 12px; font-size: 14px;"><i class="bi bi-tools"></i> Skills Used</h6>
-                  <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">React.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">Node.js</span>
-                    <span class="badge" style="background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border-color); font-weight: normal;">MySQL</span>
-                  </div>
-                </div>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+          </html>
                 <div class="mt-auto pt-4">
                   <a href="https://github.com/JohnIvn/DuhOne-Solutions" target="_blank" class="btn" style="background-color: var(--text-color); color: var(--bg-color); width: 100%; border-radius: 8px; font-weight: 600; padding: 12px 0;">View on GitHub <i class="bi bi-box-arrow-up-right ms-2"></i></a>
                 </div>
