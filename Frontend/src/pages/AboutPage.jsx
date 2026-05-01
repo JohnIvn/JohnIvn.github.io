@@ -27,13 +27,16 @@ function AboutPage() {
                 I think in layers, contrast, and flow.
               </h2>
               <p className="section-copy">
-                My work sits between product design and engineering. I like systems
-                that are clean enough to use, but expressive enough to remember.
-                That is why this portfolio leans on color fields, frosted surfaces,
-                and motion that feels calm rather than flashy.
+                My work sits between product design and engineering. I like
+                systems that are clean enough to use, but expressive enough to
+                remember. That is why this portfolio leans on color fields,
+                frosted surfaces, and motion that feels calm rather than flashy.
               </p>
               <div className="button-row mt-4">
-                <a href="mailto:janivantot@gmail.com" className="btn btn-primary">
+                <a
+                  href="mailto:janivantot@gmail.com"
+                  className="btn btn-primary"
+                >
                   Email Me
                 </a>
                 <Link to="/projects" className="btn btn-secondary">
@@ -53,7 +56,9 @@ function AboutPage() {
                 </div>
                 <div className="timeline-item">
                   <h4>Location</h4>
-                  <p className="mb-0 muted">Meycauayan, Bulacan / Caloocan City</p>
+                  <p className="mb-0 muted">
+                    Meycauayan, Bulacan / Caloocan City
+                  </p>
                 </div>
                 <div className="timeline-item">
                   <h4>Affiliation</h4>
@@ -99,8 +104,8 @@ function AboutPage() {
                 <strong>University of Caloocan City</strong>
               </p>
               <p className="muted mb-0">
-                Academic foundation in software development, systems thinking, and
-                applied problem solving.
+                Academic foundation in software development, systems thinking,
+                and applied problem solving.
               </p>
               <div className="tag-row mt-3">
                 <span className="tag">Systems</span>
@@ -120,71 +125,61 @@ function AboutPage() {
             </span>
             <h2>Selected accomplishments.</h2>
             <p className="section-copy mx-auto">
-              Recent recognitions, certifications, and language fluency that support
-              the work behind the portfolio.
+              Recent recognitions, certifications, and language fluency that
+              support the work behind the portfolio.
             </p>
           </div>
 
-          <div className="skill-grid">
-            <div className="glass-card p-4 p-md-5 reveal delay-1">
-              <div className="project-mark mb-3 tone-1">
+          <div className="accomplishments-grid">
+            {/* Awards */}
+            <div className="glass-card accomplishment-card reveal delay-1">
+              <div className="accomplishment-header tone-1">
                 <i className="bi bi-trophy-fill"></i>
               </div>
-              <h3>Honors &amp; Awards</h3>
-              <div className="timeline mt-4">
-                <div className="timeline-item">
-                  <h4>Champion in the Python Competition of CSD Fair 2025</h4>
-                  <p className="muted mb-0">
-                    Issued by University of Caloocan City, Oct 2025
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4>1st Place in the C# Competition of CSD Fair 2025</h4>
-                  <p className="muted mb-0">
-                    Issued by University of Caloocan City, Oct 2025
-                  </p>
-                </div>
-                <div className="timeline-item">
-                  <h4>1st Place in the C Competition of CSD Fair 2025</h4>
-                  <p className="muted mb-0">
-                    Issued by University of Caloocan City, Mar 2025
-                  </p>
-                </div>
-              </div>
+              <h4>Champion in the Python Competition</h4>
+              <p className="accomplishment-meta">CSD Fair 2025 · Oct 2025</p>
+              <p className="accomplishment-issuer">
+                University of Caloocan City
+              </p>
             </div>
 
-            <div className="glass-card p-4 p-md-5 reveal delay-2">
-              <div className="project-mark mb-3 tone-2">
+            <div className="glass-card accomplishment-card reveal delay-2">
+              <div className="accomplishment-header tone-2">
+                <i className="bi bi-star-fill"></i>
+              </div>
+              <h4>1st Place in the C# Competition</h4>
+              <p className="accomplishment-meta">CSD Fair 2025 · Oct 2025</p>
+              <p className="accomplishment-issuer">
+                University of Caloocan City
+              </p>
+            </div>
+
+            <div className="glass-card accomplishment-card reveal delay-3">
+              <div className="accomplishment-header tone-3">
+                <i className="bi bi-lightning-fill"></i>
+              </div>
+              <h4>1st Place in the C Competition</h4>
+              <p className="accomplishment-meta">CSD Fair 2025 · Mar 2025</p>
+              <p className="accomplishment-issuer">
+                University of Caloocan City
+              </p>
+            </div>
+
+            {/* Certifications */}
+            <div className="glass-card accomplishment-card reveal delay-4">
+              <div className="accomplishment-header tone-4">
                 <i className="bi bi-patch-check-fill"></i>
               </div>
-              <h3>Licenses &amp; Certifications</h3>
-              <div className="timeline mt-4">
-                <div className="timeline-item">
-                  <h4>Operating Systems Basics</h4>
-                  <p className="muted mb-2">Cisco, issued Dec 2025</p>
-                  <a
-                    href="https://www.credly.com/badges/927dfee6-c4bd-4f1a-9ce1-7ac34c1270de/linked_in_profile"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-secondary"
-                  >
-                    Show credential
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card p-4 p-md-5 reveal delay-3">
-              <div className="project-mark mb-3 tone-3">
-                <i className="bi bi-translate"></i>
-              </div>
-              <h3>Languages</h3>
-              <div className="tag-row mt-4">
-                <span className="tag">English</span>
-                <span className="tag">Full professional proficiency</span>
-                <span className="tag">Tagalog</span>
-                <span className="tag">Full professional proficiency</span>
-              </div>
+              <h4>Operating Systems Basics</h4>
+              <p className="accomplishment-meta">Cisco · Dec 2025</p>
+              <a
+                href="https://www.credly.com/badges/927dfee6-c4bd-4f1a-9ce1-7ac34c1270de/linked_in_profile"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary btn-sm mt-3"
+              >
+                Show credential
+              </a>
             </div>
           </div>
         </div>

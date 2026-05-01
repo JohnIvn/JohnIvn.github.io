@@ -33,13 +33,10 @@ const skillCards = [
     note: "Embedded systems",
   },
   {
-    title: "Design Direction",
-    description:
-      "Visual framing, composition, and pacing that shape the portfolio into a cohesive experience.",
-    items: ["Layout", "Typography", "Brand Systems", "Motion"],
-    icon: "bi-bounding-box-circles",
+    ...skillGroups[5],
+    icon: "bi-palette",
     tone: "tone-6",
-    note: "Creative layer",
+    note: "Creative software",
   },
 ];
 

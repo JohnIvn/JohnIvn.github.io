@@ -127,6 +127,21 @@ export const skillGroups = [
       "Bridging the digital and physical worlds through microcontrollers and sensors.",
     items: ["Arduino", "ESP32", "RFID / NFC", "IoT Integration"],
   },
+  {
+    title: "Design Tools",
+    description:
+      "Professional creative software for video, graphics, animation, and visual design.",
+    items: [
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Premiere Pro",
+      "Adobe Audition",
+      "Adobe After Effects",
+      "Krita",
+      "Aseprite",
+      "Adobe Illustrator",
+    ],
+  },
 ];
 
 export const awards = [

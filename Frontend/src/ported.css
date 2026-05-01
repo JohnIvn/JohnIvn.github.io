@@ -476,6 +476,97 @@ h3 {
   color: var(--text-secondary);
 }
 
+.accomplishments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.accomplishment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 28px 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all var(--transition);
+}
+
+.accomplishment-card:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.accomplishment-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.accomplishment-header.tone-1 {
+  background: linear-gradient(135deg, #fed2e4 0%, #fdd0fd 100%);
+  color: #8b1538;
+}
+
+.accomplishment-header.tone-2 {
+  background: linear-gradient(135deg, #dcebfd 0%, #c9dbff 100%);
+  color: #0d47a1;
+}
+
+.accomplishment-header.tone-3 {
+  background: linear-gradient(135deg, #dff8c2 0%, #c5f586 100%);
+  color: #33691e;
+}
+
+.accomplishment-header.tone-4 {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffc88b 100%);
+  color: #e65100;
+}
+
+.accomplishment-header.tone-5 {
+  background: linear-gradient(135deg, #b2dfdb 0%, #80cbc4 100%);
+  color: #00695c;
+}
+
+.accomplishment-header.tone-6 {
+  background: linear-gradient(135deg, #f8bbd0 0%, #f8aacf 100%);
+  color: #880e4f;
+}
+
+.accomplishment-card h4 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.accomplishment-meta {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.accomplishment-issuer {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.accomplishment-card .btn-sm {
+  align-self: center;
+}
+
 .animation-featured {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1713,6 +1804,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .accomplishments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1772,6 +1867,10 @@ h3 {
 
   .skill-grid,
   .skills-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accomplishments-grid {
     grid-template-columns: 1fr;
   }
 
