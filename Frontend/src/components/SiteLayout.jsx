@@ -22,6 +22,9 @@ function SiteLayout() {
               <NavLink to="/gallery">Gallery</NavLink>
             </li>
             <li>
+              <NavLink to="/animations">Animations</NavLink>
+            </li>
+            <li>
               <NavLink to="/skills">Skills</NavLink>
             </li>
             <li>
