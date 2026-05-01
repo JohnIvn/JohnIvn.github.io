@@ -1,11 +1,10 @@
-import "./App.css";
+import "./ported.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import SkillsPage from "./pages/SkillsPage";
 import AboutPage from "./pages/AboutPage";
-import AnimationsPage from "./pages/AnimationsPage";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="skills" element={<SkillsPage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="animations" element={<AnimationsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
