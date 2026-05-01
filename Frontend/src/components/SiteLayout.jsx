@@ -19,6 +19,9 @@ function SiteLayout() {
               <NavLink to="/projects">Projects</NavLink>
             </li>
             <li>
+              <NavLink to="/gallery">Gallery</NavLink>
+            </li>
+            <li>
               <NavLink to="/skills">Skills</NavLink>
             </li>
             <li>
@@ -34,10 +37,16 @@ function SiteLayout() {
 
       <footer className="footer">
         <div className="container-xl d-flex align-items-center justify-content-between gap-3 flex-wrap">
-          <p className="mb-0 text-secondary">&copy; 2026 Jan Ivan Montenegro.</p>
+          <p className="mb-0 text-secondary">
+            &copy; 2026 Jan Ivan Montenegro.
+          </p>
           <ul className="footer-links">
             <li>
-              <a href="https://github.com/johnivn" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/johnivn"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="bi bi-github me-1"></i> GitHub
               </a>
             </li>
