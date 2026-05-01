@@ -40,7 +40,7 @@ export const projects = [
     description:
       "E-commerce platform for jewelry with integrated production support tooling and secure payment processing.",
     tags: ["NestJS", "React", "Stripe"],
-    image: "/images/ely-yolly1.png",
+    image: "/images/eyj1.png",
     url: "https://ely-and-yolly.up.railway.app/",
     liveUrl: "https://ely-and-yolly.up.railway.app/",
   },

@@ -32,7 +32,9 @@ function HomePage() {
                 </div>
                 <div className="metric reveal delay-2">
                   <strong>5</strong>
-                  <div className="muted">palette tones guiding the whole site</div>
+                  <div className="muted">
+                    palette tones guiding the whole site
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,7 +253,8 @@ function HomePage() {
                 <div className="timeline-item">
                   <h4>Preferred stack</h4>
                   <p className="mb-0 muted">
-                    React, NestJS, PostgreSQL, and hardware-connected prototypes.
+                    React, NestJS, PostgreSQL, and hardware-connected
+                    prototypes.
                   </p>
                 </div>
                 <div className="timeline-item">

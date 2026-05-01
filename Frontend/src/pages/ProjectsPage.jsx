@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { projects } from "../data/siteContent";
 
 function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   // Identify featured projects
   const featuredProjects = projects.filter(
     (p) =>
@@ -13,14 +10,6 @@ function ProjectsPage() {
     (p) =>
       p.title !== "Nutribin Ecosystem" && p.title !== "Ely and Yolly Jewelry",
   );
-
-  const closeModal = () => setSelectedProject(null);
-
-  const handleEscKey = (e) => {
-    if (e.key === "Escape") {
-      closeModal();
-    }
-  };
 
   return (
     <>
@@ -56,17 +45,12 @@ function ProjectsPage() {
           {/* Featured Projects */}
           <div className="featured-projects reveal">
             {featuredProjects.map((project, index) => (
-              <article
+              <a
                 key={index}
-                className={`project-card-featured delay-${index + 1} clickable`}
-                onClick={() => setSelectedProject(project)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setSelectedProject(project);
-                  }
-                }}
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={`project-card-featured delay-${index + 1}`}
               >
                 {/* Image Container */}
                 <div className="project-featured-image">
@@ -80,8 +64,8 @@ function ProjectsPage() {
                   />
                   <div className="project-image-overlay"></div>
                   <div className="project-click-hint">
-                    <i className="bi bi-play-circle-fill"></i>
-                    <span>Click to view live</span>
+                    <i className="bi bi-arrow-up-right"></i>
+                    <span>Visit live site</span>
                   </div>
                 </div>
 
@@ -105,17 +89,11 @@ function ProjectsPage() {
                   </div>
 
                   {/* Link Button */}
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-primary"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <i className="bi bi-github"></i> View Project
-                  </a>
+                  <span className="btn btn-primary">
+                    <i className="bi bi-box-arrow-up-right"></i> Visit Site
+                  </span>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
 
@@ -174,56 +152,6 @@ function ProjectsPage() {
           </div>
         </div>
       </section>
-
-      {/* Live View Modal */}
-      {selectedProject && (
-        <div
-          className="modal-overlay"
-          onClick={closeModal}
-          onKeyDown={handleEscKey}
-          role="dialog"
-          aria-modal="true"
-          tabIndex={-1}
-        >
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            {/* Modal Header */}
-            <div className="modal-header">
-              <h2 className="modal-title">{selectedProject.title}</h2>
-              <button
-                className="modal-close"
-                onClick={closeModal}
-                aria-label="Close"
-              >
-                <i className="bi bi-x-lg"></i>
-              </button>
-            </div>
-
-            {/* Live View Iframe */}
-            <div className="modal-body">
-              <iframe
-                src={selectedProject.liveUrl}
-                title={selectedProject.title}
-                className="live-iframe"
-              />
-            </div>
-
-            {/* Modal Footer */}
-            <div className="modal-footer">
-              <a
-                href={selectedProject.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary"
-              >
-                <i className="bi bi-box-arrow-up-right"></i> Open in New Tab
-              </a>
-              <button className="btn btn-secondary" onClick={closeModal}>
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

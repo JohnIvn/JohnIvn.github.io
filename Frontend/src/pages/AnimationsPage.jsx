@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { animationAssets, dontLookAnimation } from "../data/animationAssets";
+import {
+  animationAssets,
+  dontLookAnimation,
+  makingOfDontLook,
+} from "../data/animationAssets";
 
 function AnimationsPage() {
   const videoAssets = animationAssets.filter((a) => a.type === "video");
@@ -121,6 +125,77 @@ function AnimationsPage() {
                   <span className="animation-card-type">{asset.type}</span>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Making of Don't Look */}
+      <section className="section">
+        <div className="container-xl">
+          <div className="section-heading reveal">
+            <span className="eyebrow mb-3">
+              <i className="bi bi-wrench"></i> Production pipeline
+            </span>
+            <h2>Making of "Don't Look"</h2>
+            <p className="section-copy mx-auto">
+              Behind-the-scenes glimpses into the production process across
+              multiple tools and stages of development.
+            </p>
+          </div>
+
+          <div className="making-of-collections">
+            {makingOfDontLook.map((collection, colIndex) => (
+              <div
+                key={colIndex}
+                className={`making-of-collection reveal delay-${(colIndex % 3) + 1}`}
+              >
+                <div className="making-of-header">
+                  <div className="making-of-icon tone-2">
+                    <img
+                      src={`/images/${collection.icon}`}
+                      alt={collection.title}
+                      className="making-of-icon-img"
+                    />
+                  </div>
+                  <div>
+                    <h3>{collection.title}</h3>
+                    <p className="making-of-description">
+                      {collection.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="making-of-grid">
+                  {collection.images.map((image, imgIndex) => (
+                    <article
+                      key={imgIndex}
+                      className={`glass-card animation-card reveal delay-${(imgIndex % 2) + 1}`}
+                    >
+                      <a
+                        href={`/images/animations/${image.fileName}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="animation-image-link"
+                      >
+                        <div className="animation-media-wrapper">
+                          <img
+                            src={`/images/animations/${image.fileName}`}
+                            alt={`${collection.title} - ${imgIndex + 1}`}
+                            className="animation-media"
+                          />
+                        </div>
+                      </a>
+                      <div className="animation-card-body">
+                        <p className="animation-card-title">
+                          {image.fileName.replace(/\.[^/.]+$/, "")}
+                        </p>
+                        <span className="animation-card-type">IMAGE</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
