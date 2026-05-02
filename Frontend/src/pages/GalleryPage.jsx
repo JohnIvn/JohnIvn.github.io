@@ -17,31 +17,27 @@ function prettyLabel(fileName) {
 function GalleryPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
+  const [rimworldExpanded, setRimworldExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
 
-      // Detect which section is in view
-      const rimworldSection = document.querySelector(
-        '[data-collection="rimworld"]',
-      );
-      const rustedWarfareSection = document.querySelector(
-        '[data-collection="rusted_warfare"]',
-      );
-
-      if (rimworldSection && rustedWarfareSection) {
-        const rimworldRect = rimworldSection.getBoundingClientRect();
-        const rustedRect = rustedWarfareSection.getBoundingClientRect();
-
-        if (rimworldRect.top < window.innerHeight / 2) {
-          setActiveSection("rimworld");
-        } else if (rustedRect.top < window.innerHeight / 2) {
-          setActiveSection("rusted_warfare");
-        } else {
-          setActiveSection("top");
+      // Detect which section is in view (priority order)
+      const sections = ["figma", "canva", "rimworld", "rusted_warfare"];
+      let found = false;
+      for (const s of sections) {
+        const el = document.querySelector(`[data-collection="${s}"]`);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight / 2) {
+            setActiveSection(s);
+            found = true;
+            break;
+          }
         }
       }
+      if (!found) setActiveSection("top");
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -76,6 +72,18 @@ function GalleryPage() {
             onClick={() => scrollToSection("top")}
           >
             Top
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "figma" ? "active" : ""}`}
+            onClick={() => scrollToSection("figma")}
+          >
+            Figma
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "canva" ? "active" : ""}`}
+            onClick={() => scrollToSection("canva")}
+          >
+            Canva
           </button>
           <button
             className={`pill-nav-link ${activeSection === "rusted_warfare" ? "active" : ""}`}
@@ -139,6 +147,120 @@ function GalleryPage() {
         </div>
       </section>
 
+      <section className="section section-tight pt-0" data-collection="figma">
+        <div className="container-xl">
+          <div className="making-of-collection reveal">
+            <div className="making-of-header">
+              <div className="making-of-icon tone-1">
+                <img
+                  src="/images/Figma.png"
+                  alt="Figma logo"
+                  className="making-of-icon-img"
+                />
+              </div>
+              <div>
+                <h3>Figma</h3>
+                <p className="making-of-description">
+                  In Figma, we developed the NutriBin system concept and user
+                  interface direction to support a clear, professional design
+                  workflow.
+                </p>
+              </div>
+            </div>
+
+            <div className="figma-embed-card glass-card">
+              <div className="figma-embed-frame">
+                <iframe
+                  title="NutriBin Figma design"
+                  src="https://embed.figma.com/design/2rKCoD4thNnS4URO66JF84/NutriBin--Excess-Food-Composting-and-Fertilizer-Monitoring-System?node-id=0-1&embed-host=share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tight pt-0" data-collection="canva">
+        <div className="container-xl">
+          <div className="making-of-collection reveal">
+            <div className="making-of-header">
+              <div className="making-of-icon tone-2">
+                <img
+                  src="/images/Canva-icon.png"
+                  alt="Canva logo"
+                  className="making-of-icon-img"
+                />
+              </div>
+              <div>
+                <h3>Canva</h3>
+                <p className="making-of-description">
+                  Using Canva, we created a professional user guide for the
+                  Nutribin system to support clear onboarding and consistent
+                  documentation.
+                </p>
+              </div>
+            </div>
+
+            <div className="making-of-grid">
+              {[
+                {
+                  fileName: "UserGuide.svg",
+                  title: "User guide",
+                  description: "System documentation layout",
+                },
+                {
+                  fileName: "bhs_canva.png",
+                  title: "Canva export",
+                  description: "Presentation-ready asset",
+                },
+              ].map((asset, index) => (
+                <article
+                  key={asset.fileName}
+                  className={`glass-card animation-card reveal delay-${(index % 2) + 1} ${
+                    asset.fileName.endsWith(".svg") ? "canva-svg-card" : ""
+                  }`}
+                >
+                  <a
+                    href={`/images/misc/${asset.fileName}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`animation-image-link ${
+                      asset.fileName.endsWith(".svg") ? "canva-svg-link" : ""
+                    }`}
+                  >
+                    <div
+                      className={`animation-media-wrapper ${
+                        asset.fileName.endsWith(".svg")
+                          ? "canva-svg-wrapper"
+                          : ""
+                      }`}
+                    >
+                      <img
+                        src={`/images/misc/${asset.fileName}`}
+                        alt={asset.title}
+                        className={`animation-media ${
+                          asset.fileName.endsWith(".svg")
+                            ? "canva-svg-image"
+                            : ""
+                        }`}
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <div className="animation-card-body">
+                    <p className="animation-card-title">{asset.title}</p>
+                    <span className="animation-card-type">
+                      {asset.description}
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {galleryCollections.map((collection) => (
         <section
           className="section section-tight pt-0"
@@ -154,8 +276,15 @@ function GalleryPage() {
               <p className="section-copy mx-auto">{collection.description}</p>
             </div>
 
-            <div className="gallery-grid">
-              {collection.images.map((fileName, index) => (
+            <div
+              className={`gallery-grid ${
+                collection.folder === "rimworld" ? "rimworld-preview" : ""
+              }`}
+            >
+              {(collection.folder === "rimworld" && !rimworldExpanded
+                ? collection.images.slice(0, 14)
+                : collection.images
+              ).map((fileName, index) => (
                 <article
                   className={`glass-card gallery-card reveal delay-${(index % 3) + 1}`}
                   key={`${collection.folder}-${fileName}`}
@@ -184,6 +313,19 @@ function GalleryPage() {
                 </article>
               ))}
             </div>
+            {collection.folder === "rimworld" &&
+              collection.images.length > 14 && (
+                <div className="mt-3 text-center">
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => setRimworldExpanded((current) => !current)}
+                  >
+                    {rimworldExpanded
+                      ? "Show less"
+                      : `Show more (${collection.images.length - 14} more)`}
+                  </button>
+                </div>
+              )}
           </div>
         </section>
       ))}
