@@ -1,4 +1,5 @@
 import { projects } from "../data/siteContent";
+import { useState, useEffect } from "react";
 
 function ProjectsPage() {
   // Identify featured projects
@@ -10,6 +11,36 @@ function ProjectsPage() {
     (p) =>
       p.title !== "Nutribin Ecosystem" && p.title !== "Ely and Yolly Jewelry",
   );
+
+  // Modal carousel state
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImages, setPreviewImages] = useState([]);
+  const [previewIndex, setPreviewIndex] = useState(0);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (!previewOpen) return;
+      if (e.key === "ArrowRight")
+        setPreviewIndex((i) => Math.min(i + 1, previewImages.length - 1));
+      if (e.key === "ArrowLeft") setPreviewIndex((i) => Math.max(i - 1, 0));
+      if (e.key === "Escape") setPreviewOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [previewOpen, previewImages.length]);
+
+  const openPreview = (samples, start = 0) => {
+    const imgs = Array.isArray(samples) && samples.length ? samples : [];
+    setPreviewImages(imgs.length ? imgs : ["/images/223152.png"]);
+    setPreviewIndex(start);
+    setPreviewOpen(true);
+  };
+
+  const closePreview = () => setPreviewOpen(false);
+
+  const nextPreview = () =>
+    setPreviewIndex((i) => Math.min(i + 1, previewImages.length - 1));
+  const prevPreview = () => setPreviewIndex((i) => Math.max(i - 1, 0));
 
   return (
     <>
@@ -45,28 +76,21 @@ function ProjectsPage() {
           {/* Featured Projects */}
           <div className="featured-projects reveal">
             {featuredProjects.map((project, index) => (
-              <a
+              <article
                 key={index}
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
                 className={`project-card-featured delay-${index + 1}`}
               >
                 {/* Image Container */}
                 <div className="project-featured-image">
                   <img
-                    src={project.image}
+                    src={project.icon || project.image}
                     alt={project.title}
-                    className="project-image"
+                    className={`project-image ${project.icon ? "project-icon" : ""}`}
                     onError={(e) => {
                       e.target.style.display = "none";
                     }}
                   />
                   <div className="project-image-overlay"></div>
-                  <div className="project-click-hint">
-                    <i className="bi bi-arrow-up-right"></i>
-                    <span>Visit live site</span>
-                  </div>
                 </div>
 
                 {/* Content Container */}
@@ -89,11 +113,30 @@ function ProjectsPage() {
                   </div>
 
                   {/* Link Button */}
-                  <span className="btn btn-primary">
-                    <i className="bi bi-box-arrow-up-right"></i> Visit Site
-                  </span>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "12px",
+                      alignItems: "center",
+                    }}
+                  >
+                    <button
+                      className="btn btn-outline"
+                      onClick={() => openPreview(project.samples)}
+                    >
+                      <i className="bi bi-eye"></i> Preview
+                    </button>
+                    <a
+                      className="btn btn-primary"
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="bi bi-box-arrow-up-right"></i> Visit Site
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </article>
             ))}
           </div>
 
@@ -109,9 +152,9 @@ function ProjectsPage() {
                   {/* Image Container */}
                   <div className="project-image-container">
                     <img
-                      src={project.image}
+                      src={project.icon || project.image}
                       alt={project.title}
-                      className="project-image"
+                      className={`project-image ${project.icon ? "project-icon" : ""}`}
                       onError={(e) => {
                         e.target.style.display = "none";
                       }}
@@ -136,15 +179,29 @@ function ProjectsPage() {
                       ))}
                     </div>
 
-                    {/* Link Button */}
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-primary w-100"
+                    {/* Action Buttons */}
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "12px",
+                        marginTop: "12px",
+                      }}
                     >
-                      <i className="bi bi-github"></i> View Repository
-                    </a>
+                      <button
+                        className="btn btn-outline"
+                        onClick={() => openPreview(project.samples)}
+                      >
+                        <i className="bi bi-eye"></i> Preview
+                      </button>
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-primary w-100"
+                      >
+                        <i className="bi bi-github"></i> View Repository
+                      </a>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -152,6 +209,49 @@ function ProjectsPage() {
           </div>
         </div>
       </section>
+
+      {/* Preview modal */}
+      {previewOpen && (
+        <div className="preview-modal" role="dialog" aria-modal="true">
+          <div className="preview-backdrop" onClick={closePreview}></div>
+          <div className="preview-dialog">
+            <button
+              className="preview-close"
+              onClick={closePreview}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <div className="preview-inner">
+              <button
+                className="preview-nav left"
+                onClick={prevPreview}
+                disabled={previewIndex === 0}
+              >
+                ‹
+              </button>
+              <div className="preview-image-wrap">
+                <img
+                  src={previewImages[previewIndex]}
+                  alt={`Preview ${previewIndex + 1}`}
+                />
+              </div>
+              <button
+                className="preview-nav right"
+                onClick={nextPreview}
+                disabled={previewIndex === previewImages.length - 1}
+              >
+                ›
+              </button>
+            </div>
+            <div className="preview-footer">
+              <span>
+                {previewIndex + 1} / {previewImages.length}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
