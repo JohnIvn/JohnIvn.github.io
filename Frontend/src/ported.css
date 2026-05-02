@@ -338,6 +338,64 @@ h3 {
   gap: 22px;
 }
 
+.gallery-pill-nav {
+  position: fixed;
+  /* prevent inheriting global `nav` top/left/right rules */
+  top: auto;
+  right: auto;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  padding: 12px 20px;
+  width: auto;
+  max-width: 880px;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.pill-nav-link {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.pill-nav-link:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-primary);
+}
+
+.pill-nav-link.active {
+  background: linear-gradient(135deg, #feedb3 0%, #fdd0fd 100%);
+  color: #1a1612;
+  font-weight: 700;
+}
+
 .gallery-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { galleryCollections } from "../data/galleryAssets";
 
 function prettyLabel(fileName) {
@@ -14,6 +15,52 @@ function prettyLabel(fileName) {
 }
 
 function GalleryPage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+
+      // Detect which section is in view
+      const rimworldSection = document.querySelector(
+        '[data-collection="rimworld"]',
+      );
+      const rustedWarfareSection = document.querySelector(
+        '[data-collection="rusted_warfare"]',
+      );
+
+      if (rimworldSection && rustedWarfareSection) {
+        const rimworldRect = rimworldSection.getBoundingClientRect();
+        const rustedRect = rustedWarfareSection.getBoundingClientRect();
+
+        if (rimworldRect.top < window.innerHeight / 2) {
+          setActiveSection("rimworld");
+        } else if (rustedRect.top < window.innerHeight / 2) {
+          setActiveSection("rusted_warfare");
+        } else {
+          setActiveSection("top");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (section) => {
+    if (section === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("top");
+    } else {
+      const element = document.querySelector(`[data-collection="${section}"]`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(section);
+      }
+    }
+  };
+
   const totalImages = galleryCollections.reduce(
     (count, collection) => count + collection.images.length,
     0,
@@ -21,6 +68,30 @@ function GalleryPage() {
 
   return (
     <>
+      {/* Pill Navbar - visible when scrolled */}
+      {isScrolled && (
+        <nav className="gallery-pill-nav">
+          <button
+            className={`pill-nav-link ${activeSection === "top" ? "active" : ""}`}
+            onClick={() => scrollToSection("top")}
+          >
+            Top
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "rusted_warfare" ? "active" : ""}`}
+            onClick={() => scrollToSection("rusted_warfare")}
+          >
+            Rusted Warfare
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "rimworld" ? "active" : ""}`}
+            onClick={() => scrollToSection("rimworld")}
+          >
+            RimWorld
+          </button>
+        </nav>
+      )}
+
       <section className="section">
         <div className="container-xl">
           <div className="gallery-hero reveal">
@@ -69,7 +140,11 @@ function GalleryPage() {
       </section>
 
       {galleryCollections.map((collection) => (
-        <section className="section section-tight pt-0" key={collection.folder}>
+        <section
+          className="section section-tight pt-0"
+          key={collection.folder}
+          data-collection={collection.folder}
+        >
           <div className="container-xl">
             <div className="section-heading reveal">
               <span className="eyebrow mb-3">
