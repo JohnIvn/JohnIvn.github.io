@@ -130,6 +130,52 @@ function AnimationsPage() {
         </div>
       </section>
 
+      <section className="section section-tight pt-0">
+        <div className="container-xl">
+          <div className="making-of-collection reveal">
+            <div className="making-of-header">
+              <div className="making-of-icon tone-3">
+                <img
+                  src="/images/aseprite.png"
+                  alt="Aseprite logo"
+                  className="making-of-icon-img"
+                />
+              </div>
+              <div>
+                <h3>Aseprite</h3>
+                <p className="making-of-description">
+                  I use Aseprite for pixel animation studies, including
+                  character motion tests and frame-by-frame timing work.
+                </p>
+              </div>
+            </div>
+
+            <div className="gallery-grid rimworld-preview">
+              <article className="glass-card animation-card reveal delay-1">
+                <a
+                  href="/images/iron_trauma/human.gif"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="animation-image-link"
+                >
+                  <div className="animation-media-wrapper">
+                    <img
+                      src="/images/iron_trauma/human.gif"
+                      alt="Human pixel animation"
+                      className="animation-media"
+                    />
+                  </div>
+                </a>
+                <div className="animation-card-body">
+                  <p className="animation-card-title">Human Pixel Loop</p>
+                  <span className="animation-card-type">GIF</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Making of Don't Look */}
       <section className="section">
         <div className="container-xl">

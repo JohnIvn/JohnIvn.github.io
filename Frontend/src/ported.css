@@ -775,7 +775,7 @@ h3 {
 
 .animation-media-wrapper {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.08);
   border: 1px solid var(--border-color);
@@ -784,7 +784,7 @@ h3 {
 .animation-media {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .canva-svg-card .animation-media-wrapper {
