@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   animationAssets,
   dontLookAnimation,
@@ -8,11 +8,57 @@ import {
 
 function AnimationsPage() {
   const [showFramesModal, setShowFramesModal] = useState(false);
+  const [activeSection, setActiveSection] = useState("top");
+
   const videoAssets = animationAssets.filter((a) => a.type === "video");
   const imageAssets = animationAssets.filter((a) => a.type === "image");
   const storyboardAsset = animationAssets.find(
     (a) => a.fileName === "StoryBoardCompiled.png",
   );
+
+  const scrollToSection = (sectionId) => {
+    if (sectionId === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("top");
+      return;
+    }
+    const element = document.querySelector(`[data-collection="${sectionId}"]`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 300) {
+        setActiveSection("top");
+        return;
+      }
+      const sections = [
+        "animation_library",
+        "aseprite",
+        "animate",
+        "premiere_pro",
+        "photoshop",
+        "dont_look",
+      ];
+      for (const section of sections) {
+        const element = document.querySelector(
+          `[data-collection="${section}"]`,
+        );
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 200) {
+            setActiveSection(section);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -65,6 +111,47 @@ function AnimationsPage() {
         </div>
       </section>
 
+      {(videoAssets.length > 0 || showFramesModal) && (
+        <nav className="gallery-pill-nav">
+          <button
+            className={`pill-nav-link ${activeSection === "top" ? "active" : ""}`}
+            onClick={() => scrollToSection("top")}
+          >
+            Top
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "animation_library" ? "active" : ""}`}
+            onClick={() => scrollToSection("animation_library")}
+          >
+            Animation Library
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "aseprite" ? "active" : ""}`}
+            onClick={() => scrollToSection("aseprite")}
+          >
+            Aseprite
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "animate" ? "active" : ""}`}
+            onClick={() => scrollToSection("animate")}
+          >
+            Animate
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "premiere_pro" ? "active" : ""}`}
+            onClick={() => scrollToSection("premiere_pro")}
+          >
+            Premiere Pro
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "photoshop" ? "active" : ""}`}
+            onClick={() => scrollToSection("photoshop")}
+          >
+            Photoshop
+          </button>
+        </nav>
+      )}
+
       {storyboardAsset && (
         <section className="section section-tight pt-0">
           <div className="container-xl">
@@ -91,7 +178,7 @@ function AnimationsPage() {
       )}
 
       <section className="section section-tight pt-0">
-        <div className="container-xl">
+        <div className="container-xl" data-collection="animation_library">
           <div className="section-heading reveal">
             <span className="eyebrow mb-3">
               <i className="bi bi-play-circle"></i> Motion sequences
@@ -133,7 +220,7 @@ function AnimationsPage() {
       </section>
 
       <section className="section section-tight pt-0">
-        <div className="container-xl">
+        <div className="container-xl" data-collection="aseprite">
           <div className="making-of-collection reveal">
             <div className="making-of-header">
               <div className="making-of-icon tone-3">
@@ -208,7 +295,7 @@ function AnimationsPage() {
 
       {/* Making of Don't Look */}
       <section className="section">
-        <div className="container-xl">
+        <div className="container-xl" data-collection="dont_look">
           <div className="section-heading reveal">
             <span className="eyebrow mb-3">
               <i className="bi bi-wrench"></i> Production pipeline
@@ -225,6 +312,13 @@ function AnimationsPage() {
               <div
                 key={colIndex}
                 className={`making-of-collection reveal delay-${(colIndex % 3) + 1}`}
+                data-collection={
+                  collection.title === "Adobe Animate"
+                    ? "animate"
+                    : collection.title === "Adobe Premiere Pro"
+                      ? "premiere_pro"
+                      : "photoshop"
+                }
               >
                 <div className="making-of-header">
                   <div className="making-of-icon tone-2">
