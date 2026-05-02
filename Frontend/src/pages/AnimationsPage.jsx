@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   animationAssets,
   dontLookAnimation,
@@ -6,6 +7,7 @@ import {
 } from "../data/animationAssets";
 
 function AnimationsPage() {
+  const [showFramesModal, setShowFramesModal] = useState(false);
   const videoAssets = animationAssets.filter((a) => a.type === "video");
   const imageAssets = animationAssets.filter((a) => a.type === "image");
   const storyboardAsset = animationAssets.find(
@@ -151,24 +153,52 @@ function AnimationsPage() {
             </div>
 
             <div className="gallery-grid rimworld-preview">
-              <article className="glass-card animation-card reveal delay-1">
+              <article className="glass-card aseprite-card reveal delay-1">
                 <a
                   href="/images/iron_trauma/human.gif"
                   target="_blank"
                   rel="noreferrer"
-                  className="animation-image-link"
+                  className="aseprite-card-link"
                 >
-                  <div className="animation-media-wrapper">
-                    <img
-                      src="/images/iron_trauma/human.gif"
-                      alt="Human pixel animation"
-                      className="animation-media"
-                    />
-                  </div>
+                  <img
+                    src="/images/iron_trauma/human.gif"
+                    alt="Human pixel animation"
+                    className="aseprite-card-image"
+                  />
                 </a>
-                <div className="animation-card-body">
-                  <p className="animation-card-title">Human Pixel Loop</p>
-                  <span className="animation-card-type">GIF</span>
+                <div className="aseprite-card-body">
+                  <p className="aseprite-card-label">Human Pixel Loop</p>
+                  <span className="aseprite-card-type">GIF</span>
+                  <button
+                    onClick={() => setShowFramesModal(true)}
+                    className="btn btn-secondary"
+                    style={{
+                      marginTop: "8px",
+                      fontSize: "0.8rem",
+                      padding: "6px 12px",
+                    }}
+                  >
+                    View Frames
+                  </button>
+                </div>
+              </article>
+
+              <article className="glass-card aseprite-card reveal delay-2">
+                <a
+                  href="/images/iron_trauma/bhs_aseprite.png"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="aseprite-card-link"
+                >
+                  <img
+                    src="/images/iron_trauma/bhs_aseprite.png"
+                    alt="BHS Aseprite preview"
+                    className="aseprite-card-image"
+                  />
+                </a>
+                <div className="aseprite-card-body">
+                  <p className="aseprite-card-label">BHS Aseprite</p>
+                  <span className="aseprite-card-type">PNG</span>
                 </div>
               </article>
             </div>
@@ -216,27 +246,25 @@ function AnimationsPage() {
                   {collection.images.map((image, imgIndex) => (
                     <article
                       key={imgIndex}
-                      className={`glass-card animation-card reveal delay-${(imgIndex % 2) + 1}`}
+                      className={`glass-card gallery-card reveal delay-${(imgIndex % 2) + 1}`}
                     >
                       <a
                         href={`/images/animations/${image.fileName}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="animation-image-link"
+                        className="gallery-image-link"
                       >
-                        <div className="animation-media-wrapper">
-                          <img
-                            src={`/images/animations/${image.fileName}`}
-                            alt={`${collection.title} - ${imgIndex + 1}`}
-                            className="animation-media"
-                          />
-                        </div>
+                        <img
+                          src={`/images/animations/${image.fileName}`}
+                          alt={`${collection.title} - ${imgIndex + 1}`}
+                          className="gallery-image"
+                        />
                       </a>
-                      <div className="animation-card-body">
-                        <p className="animation-card-title">
+                      <div className="gallery-card-body">
+                        <p className="gallery-card-label">
                           {image.fileName.replace(/\.[^/.]+$/, "")}
                         </p>
-                        <span className="animation-card-type">IMAGE</span>
+                        <span className="gallery-card-folder">IMAGE</span>
                       </div>
                     </article>
                   ))}
@@ -246,6 +274,38 @@ function AnimationsPage() {
           </div>
         </div>
       </section>
+
+      {showFramesModal && (
+        <div
+          className="modal-overlay"
+          onClick={() => setShowFramesModal(false)}
+        >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Animation Frames</h2>
+              <button
+                className="modal-close"
+                onClick={() => setShowFramesModal(false)}
+                aria-label="Close modal"
+              >
+                ×
+              </button>
+            </div>
+            <div className="frames-grid">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                <div key={`frame-h${num}`} className="frame-item">
+                  <img
+                    src={`/images/iron_trauma/h${num}.png`}
+                    alt={`Frame H${num}`}
+                    className="frame-image"
+                  />
+                  <p className="frame-label">H{num}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

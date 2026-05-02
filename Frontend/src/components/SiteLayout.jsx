@@ -30,7 +30,6 @@ function SiteLayout() {
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
-            <li><p>DO LOGO IN ILLUSTRATOR</p></li>
           </ul>
         </div>
       </nav>

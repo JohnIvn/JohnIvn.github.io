@@ -476,29 +476,27 @@ function GalleryPage() {
                     <div className="making-of-grid">
                       {geometronBhsImages.map((fileName, index) => (
                         <article
-                          className={`glass-card animation-card reveal delay-${(index % 2) + 1}`}
+                          className={`glass-card gallery-card reveal delay-${(index % 2) + 1}`}
                           key={`${collection.folder}-${fileName}`}
                         >
                           <a
                             href={`/images/${collection.folder}/${fileName}`}
                             target="_blank"
                             rel="noreferrer"
-                            className="animation-image-link"
+                            className="gallery-image-link"
                           >
-                            <div className="animation-media-wrapper">
-                              <img
-                                src={`/images/${collection.folder}/${fileName}`}
-                                alt={prettyLabel(fileName)}
-                                className="animation-media"
-                                loading="lazy"
-                              />
-                            </div>
+                            <img
+                              src={`/images/${collection.folder}/${fileName}`}
+                              alt={prettyLabel(fileName)}
+                              className="gallery-image"
+                              loading="lazy"
+                            />
                           </a>
-                          <div className="animation-card-body">
-                            <p className="animation-card-title">
+                          <div className="gallery-card-body">
+                            <p className="gallery-card-label">
                               {prettyLabel(fileName)}
                             </p>
-                            <span className="animation-card-type">
+                            <span className="gallery-card-folder">
                               {collection.folder}
                             </span>
                           </div>
