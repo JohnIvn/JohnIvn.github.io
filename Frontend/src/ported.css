@@ -505,8 +505,16 @@ h3 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
+.gallery-grid.geometron-three {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .gallery-grid.rimworld-preview .gallery-card {
   min-width: 0;
+}
+
+.gallery-grid.rimworld-preview .gallery-image {
+  aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 1400px) {
@@ -523,6 +531,10 @@ h3 {
 
 @media (max-width: 767px) {
   .gallery-grid.rimworld-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid.geometron-three {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -914,8 +926,9 @@ h3 {
 }
 
 .gallery-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: auto;
   object-fit: contain;
   padding: 12px;
   background: linear-gradient(

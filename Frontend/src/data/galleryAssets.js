@@ -186,7 +186,38 @@ export const rustedWarfareImages = [
   "seatruck2.png",
 ];
 
+export const geometronImages = [
+  "e1.png",
+  "e2.png",
+  "e3.png",
+  "e4.png",
+  "e5.png",
+  "e6.png",
+  "e7.png",
+  "e8.png",
+  "e9.png",
+  "e10.png",
+  "e11.png",
+];
+
+export const geometronBhsImages = [
+  "bhs1.png",
+  "bhs2.png",
+  "bhs3.png",
+  "bhs4.png",
+  "bhs5.png",
+  "bhs6.png",
+];
+
 export const galleryCollections = [
+  {
+    title: "Game Concept Project: Geometron",
+    folder: "geometron",
+    description:
+      "Early visual concept sheets and exploratory sprite drafts for the Geometron game concept project.",
+    accent: "tone-5",
+    images: geometronImages,
+  },
   {
     title: "RimWorld Modding",
     folder: "rimworld",

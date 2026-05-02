@@ -1,6 +1,33 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { galleryCollections } from "../data/galleryAssets";
+import { galleryCollections, geometronBhsImages } from "../data/galleryAssets";
+
+const iconDrafts = [
+  {
+    fileName: "nutribin_icon.png",
+    title: "Nutribin",
+  },
+  {
+    fileName: "eyj_icon.png",
+    title: "Ely and Yolly Jewelry",
+  },
+  {
+    fileName: "gofare_icon.png",
+    title: "GoFare",
+  },
+  {
+    fileName: "rollcall_icon.png",
+    title: "RollCall",
+  },
+  {
+    fileName: "duhone_icon.png",
+    title: "DuhOne",
+  },
+  {
+    fileName: "nihon_icon.png",
+    title: "Nihon Gaku",
+  },
+];
 
 function prettyLabel(fileName) {
   return fileName
@@ -18,29 +45,42 @@ function GalleryPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
   const [rimworldExpanded, setRimworldExpanded] = useState(false);
+  const [geometronExpanded, setGeometronExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
 
-      // Detect which section is in view (priority order)
-      const sections = ["figma", "canva", "rimworld", "rusted_warfare"];
-      let found = false;
+      // Detect the section nearest the threshold from above.
+      const sections = [
+        "figma",
+        "canva",
+        "icon_drafts",
+        "geometron",
+        "krita",
+        "rimworld",
+        "rusted_warfare",
+      ];
+      const threshold = window.innerHeight * 0.4;
+      let currentSection = "top";
+      let bestTop = Number.NEGATIVE_INFINITY;
+
       for (const s of sections) {
         const el = document.querySelector(`[data-collection="${s}"]`);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight / 2) {
-            setActiveSection(s);
-            found = true;
-            break;
+          if (rect.top <= threshold && rect.top > bestTop) {
+            currentSection = s;
+            bestTop = rect.top;
           }
         }
       }
-      if (!found) setActiveSection("top");
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -86,16 +126,34 @@ function GalleryPage() {
             Canva
           </button>
           <button
-            className={`pill-nav-link ${activeSection === "rusted_warfare" ? "active" : ""}`}
-            onClick={() => scrollToSection("rusted_warfare")}
+            className={`pill-nav-link ${activeSection === "icon_drafts" ? "active" : ""}`}
+            onClick={() => scrollToSection("icon_drafts")}
           >
-            Rusted Warfare
+            Icon Drafts
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "geometron" ? "active" : ""}`}
+            onClick={() => scrollToSection("geometron")}
+          >
+            Geometron
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "krita" ? "active" : ""}`}
+            onClick={() => scrollToSection("krita")}
+          >
+            Krita
           </button>
           <button
             className={`pill-nav-link ${activeSection === "rimworld" ? "active" : ""}`}
             onClick={() => scrollToSection("rimworld")}
           >
             RimWorld
+          </button>
+          <button
+            className={`pill-nav-link ${activeSection === "rusted_warfare" ? "active" : ""}`}
+            onClick={() => scrollToSection("rusted_warfare")}
+          >
+            Rusted Warfare
           </button>
         </nav>
       )}
@@ -261,6 +319,52 @@ function GalleryPage() {
         </div>
       </section>
 
+      <section
+        className="section section-tight pt-0"
+        data-collection="icon_drafts"
+      >
+        <div className="container-xl">
+          <div className="section-heading reveal">
+            <span className="eyebrow mb-3">
+              <i className="bi bi-palette2"></i> Icon Drafts
+            </span>
+            <h2>Project icons and early marks.</h2>
+            <p className="section-copy mx-auto">
+              These are the icons and draft marks for several projects I’ve
+              worked on, created to establish a consistent visual identity
+              before the final presentation assets were refined.
+            </p>
+          </div>
+
+          <div className="gallery-grid icon-drafts-grid">
+            {iconDrafts.map((asset, index) => (
+              <article
+                key={asset.fileName}
+                className={`glass-card gallery-card reveal delay-${(index % 3) + 1}`}
+              >
+                <a
+                  href={`/images/${asset.fileName}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="gallery-image-link"
+                >
+                  <img
+                    src={`/images/${asset.fileName}`}
+                    alt={asset.title}
+                    className="gallery-image"
+                    loading="lazy"
+                  />
+                </a>
+                <div className="gallery-card-body">
+                  <p className="gallery-card-label">{asset.title}</p>
+                  <span className="gallery-card-folder">draft icon</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {galleryCollections.map((collection) => (
         <section
           className="section section-tight pt-0"
@@ -278,12 +382,19 @@ function GalleryPage() {
 
             <div
               className={`gallery-grid ${
-                collection.folder === "rimworld" ? "rimworld-preview" : ""
+                collection.folder === "rimworld" ||
+                collection.folder === "rusted_warfare"
+                  ? "rimworld-preview"
+                  : collection.folder === "geometron"
+                    ? "geometron-three"
+                    : ""
               }`}
             >
               {(collection.folder === "rimworld" && !rimworldExpanded
                 ? collection.images.slice(0, 14)
-                : collection.images
+                : collection.folder === "geometron" && !geometronExpanded
+                  ? collection.images.slice(0, 4)
+                  : collection.images
               ).map((fileName, index) => (
                 <article
                   className={`glass-card gallery-card reveal delay-${(index % 3) + 1}`}
@@ -324,6 +435,77 @@ function GalleryPage() {
                       ? "Show less"
                       : `Show more (${collection.images.length - 14} more)`}
                   </button>
+                </div>
+              )}
+            {collection.folder === "geometron" &&
+              collection.images.length > 4 && (
+                <div className="mt-3 text-center">
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => setGeometronExpanded((current) => !current)}
+                  >
+                    {geometronExpanded
+                      ? "Show less"
+                      : `Show more (${collection.images.length - 4} more)`}
+                  </button>
+                </div>
+              )}
+
+            {collection.folder === "geometron" &&
+              geometronBhsImages.length > 0 && (
+                <div className="mt-4" data-collection="krita">
+                  <div className="making-of-collection reveal">
+                    <div className="making-of-header">
+                      <div className="making-of-icon tone-4">
+                        <img
+                          src="/images/krita.svg"
+                          alt="Krita icon"
+                          className="making-of-icon-img"
+                        />
+                      </div>
+                      <div>
+                        <h3>Krita Section</h3>
+                        <p className="making-of-description">
+                          The Geometron concepts were created in Krita, and this
+                          section highlights the draft and exploration files
+                          from the project.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="making-of-grid">
+                      {geometronBhsImages.map((fileName, index) => (
+                        <article
+                          className={`glass-card animation-card reveal delay-${(index % 2) + 1}`}
+                          key={`${collection.folder}-${fileName}`}
+                        >
+                          <a
+                            href={`/images/${collection.folder}/${fileName}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="animation-image-link"
+                          >
+                            <div className="animation-media-wrapper">
+                              <img
+                                src={`/images/${collection.folder}/${fileName}`}
+                                alt={prettyLabel(fileName)}
+                                className="animation-media"
+                                loading="lazy"
+                              />
+                            </div>
+                          </a>
+                          <div className="animation-card-body">
+                            <p className="animation-card-title">
+                              {prettyLabel(fileName)}
+                            </p>
+                            <span className="animation-card-type">
+                              {collection.folder}
+                            </span>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
           </div>
