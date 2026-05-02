@@ -41,7 +41,6 @@ function AnimationsPage() {
         "animate",
         "premiere_pro",
         "photoshop",
-        "dont_look",
       ];
       for (const section of sections) {
         const element = document.querySelector(
